@@ -1,4 +1,8 @@
 <?php
+require_once("config.php");
 
-echo "Hello World!";
+$sql = new Sql();
 
+$usuarios = $sql->select("SELECT * FROM usuarios");
+
+echo json_encode($usuarios);
