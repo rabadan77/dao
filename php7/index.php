@@ -14,14 +14,36 @@ echo json_encode($usuarios);
  echo $root;
  
 
- 
+ */
  echo json_encode(Usuario::getList());
- * 
+ /* 
  
 $search = Usuario::search("ra");
 echo json_encode($search);
  * 
- */
+ 
 $usuario = new Usuario();
-$usuario->login("rabadan", "senha1234");
+$usuario->login("rabadan", "senha123");
 echo $usuario;
+ * 
+ *
+$user = new Usuario("outro_teste", "senha_outro123");
+//$user->setUser("teste");
+//$user->setSenha("654321");
+$user->insert();
+
+echo $user;
+ 
+
+$usuario = new Usuario();
+$usuario->loadById(4);
+$usuario->update("eeeeee", "111222");
+echo $usuario;
+ * 
+ 
+$usuario = new Usuario();
+$usuario->loadById(5);
+$usuario->delete();
+echo $usuario;
+ * 
+ */
